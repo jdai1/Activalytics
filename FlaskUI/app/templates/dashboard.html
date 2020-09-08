@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+{% block page_content %}
+  <body style = "background-color: #E9ECF7" padding-bottom: 20px;>  
+  <section id="main" class="wrapper">
+                <div class="inner">
+                    <header class="align-center">
+                        <h1>Dashboard</h1>
+                    </header>
+                    
+                    <div style = "position:relative; left:50px; top:-50px;">
+                    <div class="container-fluid">
+                <div class="row">
+                    <div class="wrapper">
+                    <div class="col-12 col-xl-6">
+                        <div class="card card-4">
+                            <div class="header">
+                                <img src="{{ url_for('static', filename='images/table.png') }}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    <div style = "position:relative; left:420px; bottom:620px;">
+                    <div class="content">
+                        <div class="col-md-6">
+                            <div class="row">
+                            <div class="wrapper">
+                            <div class="card">
+                                <div class="card-header">
+                                    <p><center><font size="+1">Recommendations</font></center></p>
+                                </div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:70%;">Name</th>
+                                            <th style="width:50%">Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for senator in data %}
+                                            <tr>
+                                                <td> {{senator["Name"]}}</td>
+                                                <td> {{senator["Email Address"]}}</td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                            </div>
+                                
+                <div style = "position:relative; right:430px; bottom:30px;">
+                      <div class="col-12 col-xl-6">
+                        <div class="card card-4">
+                            <div class="header">
+                                <p><center><font size="+1">Tasks</font></center></p>
+                            </div>
+                            <div class="content">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input id="checkbox1" type="checkbox">
+                                                        <label for="checkbox1"></label>
+                                                    </div>
+                                                </td>
+                                                <td>Email Senator Vitolo</td>
+                                                <td class="td-actions text-right">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input id="checkbox2" type="checkbox">
+                                                        <label for="checkbox2"></label>
+                                                    </div>
+                                                </td>
+                                                <td>Start a new climate campaign</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input id="checkbox3" type="checkbox">
+                                                        <label for="checkbox3"></label>
+                                                    </div>
+                                                </td>
+                                                <td>Draft an email template</td>
+                                                <td class="td-actions text-right">
+                                                </td>
+                                            </tr>
+                                            <tr> 
+                                                <td>  
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                            </div>
+        </section>
+        
+{% endblock %}

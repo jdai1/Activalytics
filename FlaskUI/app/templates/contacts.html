@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block subpage %}
+		<!-- Main -->
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<header class="align-center">
+						<h1>Recommended Representatives</h1>
+					</header>
+{% endblock %}
+
+{% block style %}
+<style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+{% endblock %}
+
+{% block page_content %}
+<body>
+
+<table id="customers">
+  <tr>
+    <th>Name</th>
+    <th>Party</th>
+    <th>Email</th>
+    <th>District</th>
+    <th>URL</th>
+    <th>Score</th>
+  </tr>
+  {% for senator in data %}
+    <tr>
+      <td> {{senator["Name"]}}</td>
+      <td> {{senator["Party"]}}</td>
+      <td> {{senator["Email Address"]}} </td>
+      <td> {{senator["District"]}}</td>
+      <td> {{senator["Link"]}}</td>
+      <td> {{senator["Score"]}}</td>
+    </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}
+		
